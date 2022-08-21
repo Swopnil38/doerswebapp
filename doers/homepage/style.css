@@ -1,4 +1,82 @@
+
+
+ html, body {
+	 background-color: #e7e7ea;
+
+	 font-size: 1.13em;
+	 font-weight: bold;
+}
+ .container {
+	 display: flex;
+	 align-content: center;
+	 justify-content: center;
+	 height: 100vh;
+}
+ .btn {
+	 color: #101832;
+	 cursor: pointer;
+	 display: inline-block;
+	 letter-spacing: 0.075em;
+	 padding: 0.8em 1em;
+	 margin: auto 2em;
+	 position: relative;
+	 align-self: center;
+	 text-transform: uppercase;
+	 border: 3px #00bcdd solid;
+	 border-image: linear-gradient(45deg, #00bcdd 0%, #f0f 100%);
+	 border-image-slice: 1 1 0 0;
+	 z-index: 1;
+	 box-shadow: -0.5em 0.5em rgba(16, 24, 50, 0);
+	 transform-origin: left bottom;
+	 -webkit-transition: all 200ms ease-in-out;
+	 -moz-transition: all 200ms ease-in-out;
+	 -o-transition: all 200ms ease-in-out;
+	 transition: all 200ms ease-in-out;
+}
+ .btn:before, .btn:after {
+	 border: 3px #00bcdd solid;
+
+	 display: block;
+	 position: absolute;
+	 z-index: -1;
+}
+ .btn:before {
+	 border-image: linear-gradient(45deg, #00bcdd);
+	 border-image-slice: 1 1 0 1;
+	 left: -0.59em;
+	 top: 0.15em;
+	 width: 0.31em;
+	 height: 100%;
+	 transform: skewY(-45deg);
+}
+ .btn:after {
+	 border-image: linear-gradient(45deg, #00bcdd 0%, #f0f 100%);
+	 border-image-slice: 1 1 1 0;
+	 bottom: -0.61em;
+	 right: 0.16em;
+	 width: 100%;
+	 height: 0.31em;
+	 transform: skewX(-45deg);
+}
+ .btn:hover {
+	 background-color: white;
+	 background-size: 90%;
+	 transform: translate(0.5em, -0.5em);
+	 box-shadow: -1em 1em 0.15em rgba(16, 24, 50, 0.1);
+}
+ .btn:hover:before {
+    
+    background-image: linear-gradient(45deg, blue-color 0%, pink-color 100%);
+	 height: calc(100% - .13em);
+	 border-image-slice: 1;
+}
+ .btn:hover:after {
+    background-image: linear-gradient(45deg, blue-color 0%, pink-color 100%) ;
+	 width: calc(100% - .13em);
+	 border-image-slice: 1;
+}
 *{
+    
     margin:0;
     padding:0;
     font-family: sans-serif;
@@ -7,10 +85,14 @@
 .banner{
     width:100%;
     height:100vh;
-    background-image:url(doersflix.jpg);
+    background-image:url(background.jpg);
     background-size: cover;
     background-position:center;
     opacity: 80%;
+    -moz-box-shadow: inset 10px 10px 50px rgb(12, 12, 12);
+    -webkit-box-shadow: inset 10px 10px 50px rgb(7, 7, 7);
+    box-shadow: inset 150px 80px 250px rgb(8, 8, 8);
+
 }
 .navbar{
     width:90%;
@@ -29,39 +111,49 @@
 
 .content{
     width: auto;
-   
     margin-top: 9%;
     transform: translateY(-50%);
     text-align: center;
-    color:#009688;
+    text-shadow: black,20px;
+    
+
+    
 
 }
 .content h1{
-    font-size: 70px;
-    margin-top: 80px;
-    text-decoration: white;
+    font-size: 80px;
+    margin-top: 60px;
+    text-decoration: rgb(247, 247, 247);
     text-align: center;
+    color: aliceblue;
+    -webkit-text-stroke:3px black;
+    
+    
+    
 }
-.content p{
+.content_subtitle{
     margin: 20px;
     font-size:20px;
     line-height: 25px;
-    text-decoration: whitesmoke;
+    text-decoration: rgb(10, 10, 10);
     text-align: center;
+    text-decoration-color: black;
 }
 .qstbtn{
     width: 200px;
-	background: blueviolet;
+	background: rgb(30, 179, 199);
     font-weight: bold;
 	font:15px;
     opacity:80%;
 	color: white;
-	border: 0 none;
-	border-radius: 1px;
 	cursor: pointer;
 	padding: 10px 5px;
 	margin: 5px 5px;
+
+  padding: 10px;
+  box-shadow: 5px 10px #e20d91;
 }
+
 .qstbtn:hover{
     opacity: 100%;
 }
