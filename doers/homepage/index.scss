@@ -54,7 +54,7 @@ html, body {
     
     // SIDE
     &:before {
-      border-image: linear-gradient(45deg, $blue-color 0%);
+      border-image: linear-gradient(45deg, $blue-color);
       border-image-slice: 1 1 0 1;
       left: -0.59em; top: .15em;
       width: .31em;
