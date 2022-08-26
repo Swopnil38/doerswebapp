@@ -23,11 +23,7 @@
 	left: 5px;
   }
   
-  @media (min-width: 768px) {
-	.button-54 {
-	  padding: 0.25em 0.75em;
-	}
-  }
+ 
 
  html, body {
 	 background-color: #e7e7ea;
@@ -65,15 +61,18 @@ form{
     box-shadow: inset 150px 80px 250px rgb(8, 8, 8);
 
 }
-.navbar{
-    width:10%;
-    margin:auto;
 
+
+.navbar{
+    width: 25%;
+    margin:auto;
     display: flex;
     justify-content:space between;
-    
+  
     margin-left: 5%;
+  
 }
+
 .logo{
     width:100%;
 
@@ -81,29 +80,25 @@ form{
       
 }
 
+ 
 .content{
     width: auto;
-    margin-top: 9%;
+    margin-top: 7vh;
     transform: translateY(-50%);
     text-align: center;
     text-shadow: black,3px;
-    
-
-    
-
-}
+  }  
+ 
 .content h1{
-    font-size: 5rem;
-	font-weight: bold;
-	font-family: Arial, Helvetica, sans-serif;
-    margin-top: 200px;
+    font-size: 7vw;
+	  font-weight: bold;
+	  font-family: Arial, Helvetica, sans-serif;
+    margin-top: 2vw;
     text-decoration: rgb(247, 247, 247);
     text-align: center;
     color: #47c3d3;
-    -webkit-text-stroke:3px rgb(247, 243, 243);
-    
-    
-    
+    -webkit-text-stroke:2px rgb(247, 243, 243);
+ 
 }
 .content_subtitle{
     margin: 25px;
@@ -282,4 +277,37 @@ textarea {
 	font-size: 13px;
 	color: #666;
 	margin-bottom: 15px;
+}
+/*  Responsive */
+@media (min-width: 667px) {
+	.button-54 {
+	  padding: 0.25em 0.75em;
+	}
+  .content{
+    margin-top: 10vw;
+  }
+  .navbar{
+    width: 10%;
+  }
+  .email__input{
+    font-size: 0.7rem;
+
+  }
+  .email__label{
+    font-size: 00.75rem
+
+
+  }
+  }
+
+@media screen and (max-width: 914px) {
+  .button-54 {
+	  padding: 0.25em 0.75em;
+	}
+  .content{
+    margin-top: 10vw;
+  }
+  .navbar{
+    width: 10%;
+  }
 }
