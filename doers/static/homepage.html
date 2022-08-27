@@ -8,19 +8,29 @@
         <link rel="stylesheet" href="{% static "style.css" %}">
     </head>
     <body>
-        <div class="banner">
-            <div class="navbar">
-                <img src="{% static "logo.png" %}"class="logo">
-                
-            </div>
+        <header>
+            <nav class="navbar">
+                <div class="nav_logo">
+                    <img src="{% static "logo.png" %}" class="logo">
+                </div>
+            </nav>
 
-            <div class ="content">
-                <h1>Get Inspired, Be a Doer</h1>
-                <input type="button" name="doer" value="Are You a Doer ?" class="button-54" id="doer"/>
-                <input type="button" name="willingdoer" value="Do You want to be a Doer ?" class="button-54" id="willingdoer"/>
-                <p class="content_subtitle">Want to Join our Way? We are Cooking Something Tasty.</p>
-                <div class="hero_card">
-                   <div class="email__form__container">
+        </header>
+        <main>
+            <section class="banner">
+                <div class="bg_img_container">
+                    <img src="{%static "background.jpg" %}" class="bg_img">
+                </div>
+                <div class="overlay"></div>
+                
+
+                <div class ="content">
+                    <h1 class="title">Get Inspired, Be a Doer</h1>
+                    <input type="button" name="doer" value="Are You a Doer ?" class="button-54" id="doer"/>
+                    <input type="button" name="willingdoer" value="Do You want to be a Doer ?" class="button-54" id="willingdoer"/>
+                    <p class="subtitle">Want to Join our Way? We are Cooking Something Tasty.</p>
+
+                    <div class="email__form__container">
                         <form method="POST">
                             {% csrf_token %}
                             <div class="form__container">
@@ -28,71 +38,73 @@
                                 <label class="email__label">Email Address</label>
                             </div>
                             <button type="submit" class="primary__button">
-                                Get Notified <i class="fal fa-chevron-right"></i>
+                                <a style="text-decoration: none; color: inherit ; " href="pages/signin.html ">Get Notified </a><i class="fal fa-chevron-right ">
+                                </i>
                             </button>
                         </form>
-                     </div>
-                </div>
-                
-                {% include 'messages.html' %}
-           
-                <form method="POST" id = "doersform" >
-                    {% csrf_token %}
+                    </div>
+        
                     
-                    <fieldset id = "doerdetails">
-                        <h2 class="fs-title">Welcome Doers</h2>
-                        <h2 class="fs-subtitle">Join us to Share your Story</h2>
-                        <input type = "text" name = "doers_name" placeholder="Name"/>
-                        <input type = "text" name = "doers_profession" placeholder="What are You Involved in ?"/>
-                        <input type="text" name="doers_timeinfield" placeholder="How Long Have You Been In this Field ?" />
-                        <textarea name="doersimpactdesc" placeholder="How do You think You Have Created an Impact ?"></textarea>
-                        <textarea name="doers_willingness" placeholder="Are You Willing to be Hosted in our Podcast.If Yes, What will you be Talking about ?"></textarea>
-                        <input type = "text" name = "doers_contact" placeholder="Contact Details"/>
-                        <input type="button" name="cancel" class="previous action-button" value="Cancel" id = "canceldoer"/>
-                        <input type="submit" name="submit" class="next action-button" value="Submit" id = "submitdoer" />
-                        
-                    </fieldset>
-                    
-                </form>
-                <form method="POST" id = "doersform" >
-                    {% csrf_token %}
-                    
-                    <fieldset id = "willingdoerdetails">
-                        <h2 class="fs-title">Welcome Future Doers</h2>
-                        <h2 class="fs-subtitle">Join us to Learn and Become a Doer</h2>
-                        <input type = "text" name = "willingdoers_name" placeholder="Name"/>
-                        <input type = "text" name = "willingdoers_experties" placeholder="What are You Good at ?"/>
-                        <input type="text" name="willingdoers_skillset" placeholder="How Skillset do you want to build ?" />
-                        <textarea name="willingdoers_want" placeholder="What Do You Want to Do ?"></textarea>
-                        <input type="text" name="willingdoers_education" placeholder="Education/Degree" />
-                        <input type = "text" name = "willingdoers_contact" placeholder="Contact Details"/>
-                        <input type="button" name="cancel" class="previous action-button" value="Cancel" id = "cancelwillingdoer"/>
-                        <input type="submit" name="cubmit" class="next action-button" value="Submit" id = "submitwillingdoer" />
-                        
-                    </fieldset>
-                </form>
-                
-
-            </div>
-        </div>
-    </div>
-    <script>
-        document.getElementById("doer").onclick = function() {
-            document.getElementById("doerdetails").style.display = "block";
-        }   
-        document.getElementById("canceldoer").onclick = function() {
-            document.getElementById("doerdetails").style.display = "none";
-        }
- 
-        document.getElementById("willingdoer").onclick = function() {
-            document.getElementById("willingdoerdetails").style.display = "block";
-        }   
-        document.getElementById("cancelwillingdoer").onclick = function() {
-            document.getElementById("willingdoerdetails").style.display = "none";
-        }
-    
+                    {% include 'messages.html' %}
             
-    </script>
+                    <form method="POST" id = "doersform" >
+                        {% csrf_token %}
+                        
+                        <fieldset id = "doerdetails">
+                            <h2 class="fs-title">Welcome Doers</h2>
+                            <h2 class="fs-subtitle">Join us to Share your Story</h2>
+                            <input type = "text" name = "doers_name" placeholder="Name"/>
+                            <input type = "text" name = "doers_profession" placeholder="What are You Involved in ?"/>
+                            <input type="text" name="doers_timeinfield" placeholder="How Long Have You Been In this Field ?" />
+                            <textarea name="doersimpactdesc" placeholder="How do You think You Have Created an Impact ?"></textarea>
+                            <textarea name="doers_willingness" placeholder="Are You Willing to be Hosted in our Podcast.If Yes, What will you be Talking about ?"></textarea>
+                            <input type = "text" name = "doers_contact" placeholder="Contact Details"/>
+                            <input type="button" name="cancel" class="previous action-button" value="Cancel" id = "canceldoer"/>
+                            <input type="submit" name="submit" class="next action-button" value="Submit" id = "submitdoer" />
+                            
+                        </fieldset>
+                        
+                    </form>
+                    <form method="POST" id = "doersform" >
+                        {% csrf_token %}
+                        
+                        <fieldset id = "willingdoerdetails">
+                            <h2 class="fs-title">Welcome Future Doers</h2>
+                            <h2 class="fs-subtitle">Join us to Learn and Become a Doer</h2>
+                            <input type = "text" name = "willingdoers_name" placeholder="Name"/>
+                            <input type = "text" name = "willingdoers_experties" placeholder="What are You Good at ?"/>
+                            <input type="text" name="willingdoers_skillset" placeholder="How Skillset do you want to build ?" />
+                            <textarea name="willingdoers_want" placeholder="What Do You Want to Do ?"></textarea>
+                            <input type="text" name="willingdoers_education" placeholder="Education/Degree" />
+                            <input type = "text" name = "willingdoers_contact" placeholder="Contact Details"/>
+                            <input type="button" name="cancel" class="previous action-button" value="Cancel" id = "cancelwillingdoer"/>
+                            <input type="submit" name="cubmit" class="next action-button" value="Submit" id = "submitwillingdoer" />
+                            
+                        </fieldset>
+                    </form>
+                    
+
+                </div>
+            </section>
+        </main>
+    
+        <script>
+            document.getElementById("doer").onclick = function() {
+                document.getElementById("doerdetails").style.display = "block";
+            }   
+            document.getElementById("canceldoer").onclick = function() {
+                document.getElementById("doerdetails").style.display = "none";
+            }
+    
+            document.getElementById("willingdoer").onclick = function() {
+                document.getElementById("willingdoerdetails").style.display = "block";
+            }   
+            document.getElementById("cancelwillingdoer").onclick = function() {
+                document.getElementById("willingdoerdetails").style.display = "none";
+            }
+        
+                
+        </script>
 
     </body>
 </html>
