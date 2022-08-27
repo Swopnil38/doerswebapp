@@ -23,11 +23,7 @@
 	left: 5px;
   }
   
-  @media (min-width: 768px) {
-	.button-54 {
-	  padding: 0.25em 0.75em;
-	}
-  }
+ 
 
 
 
@@ -60,6 +56,11 @@ body {
 .logo {
   width: 200px;
 }
+
+
+
+
+ 
 
 .bg_img_container {
   width: 100%;
@@ -253,6 +254,7 @@ textarea {
 	color: #666;
 	margin-bottom: 15px;
 }
+
 
 
 @media (min-width: 768px) {
