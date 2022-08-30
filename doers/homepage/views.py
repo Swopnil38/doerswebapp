@@ -15,7 +15,7 @@ def Insertdoersdetails(request):
             savedetails.doers_contact=request.POST.get('doers_contact')
             savedetails.save()
             messages.success(request,'Your Record Has been Added')
-            return render(request,'homepage.html')
+            return render(request,'home.html')
         elif request.POST.get('willingdoers_name') and request.POST.get('willingdoers_experties') and request.POST.get('willingdoers_skillset') and request.POST.get('willingdoers_want') and request.POST.get('willingdoers_education') and request.POST.get('willingdoers_contact'):
             savedetails = willingdoersdetails()
             savedetails.willingdoers_name=request.POST.get('willingdoers_name')
@@ -26,13 +26,13 @@ def Insertdoersdetails(request):
             savedetails.willingdoers_contact=request.POST.get('willingdoers_contact')
             savedetails.save()
             messages.success(request,'Your Record Has been Added')
-            return render(request,'homepage.html')
+            return render(request,'home.html')
         elif request.POST.get('email'):
             savedetails = emaillist()
             savedetails.email = request.POST.get('email')
             savedetails.save()
             messages.success(request,'Your Record Has been Added')
-            return render(request,'homepage.html')
+            return render(request,'home.html')
     else:
-            return render(request,'homepage.html')
+            return render(request,'home.html')
  
